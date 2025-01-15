@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import MovieList from './components/MovieList';
+import Filter from './components/Filter';
 
 
 const App = () => {
