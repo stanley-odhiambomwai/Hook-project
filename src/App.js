@@ -5,8 +5,14 @@ import Filter from './components/Filter';
 
 const App = () => {
   const [movies, setMovies] = useState([
-    { title: 'Inception', description: 'A mind-bending thriller.', posterURL: 'https://via.placeholder.com/150', rating: 5 },
-    { title: 'The Dark Knight', description: 'A gripping superhero tale.', posterURL: 'https://via.placeholder.com/150', rating: 4 },
+    { title: 'Inception', 
+      description: 'A mind-bending thriller.'
+      , posterURL: 'https://via.placeholder.com/150',
+       rating: 5 },
+    { title: 'The Dark Knight', 
+      description: 'A gripping superhero tale.', 
+      posterURL: 'https://via.placeholder.com/150',
+       rating: 4 },
   ]);
 
   const [filter, setFilter] = useState({ title: '', rating: 0 });
