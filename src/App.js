@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MovieList from './components/MovieList';
 import Filter from './components/Filter';
 
@@ -12,7 +13,8 @@ const App = () => {
     { title: 'The Dark Knight', 
       description: 'A gripping superhero tale.', 
       posterURL: 'https://via.placeholder.com/150',
-       rating: 4 },
+       rating: 4 ,
+       trailerURL: "https://www.youtube.com/embed/YoHD9XEInc0"},
   ]);
 
   const [filter, setFilter] = useState({ title: '', rating: 0 });
@@ -26,6 +28,11 @@ const App = () => {
   );
 
   return (
+    <Router>
+<Routes>
+  <Route
+  path="/"
+  element={
     <div>
       <h1>Movie App</h1>
       <Filter setFilter={setFilter} />
@@ -34,6 +41,14 @@ const App = () => {
         Add Movie
       </button>
     </div>
+  }
+    />
+    <Route
+    path="/movie/:title"
+    element={<MovieDetails movies={movies}/>}
+    />
+    </Routes>
+    </Router>
   );
 };
 
